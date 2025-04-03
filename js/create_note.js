@@ -24,12 +24,14 @@ if (titleInput && textInput) {
                 notes[currentIndex] = { 
                     title: titleInput.value, 
                     text: textInput.value,
+                    color: titleInput.style.backgroundColor,
                     lastEdited: lastEdited.toLocaleString('uk-UA') // Додаємо час до нотатки
                 };
             } else {
                 notes.unshift({ 
                     title: titleInput.value, 
                     text: textInput.value,
+                    color: titleInput.style.backgroundColor,
                     lastEdited: lastEdited.toLocaleString('uk-UA') // Додаємо час до нової нотатки
                 });
             }
@@ -94,3 +96,4 @@ microphoneIcon.addEventListener("click", function () {
 pictureIcon.addEventListener("click", function () {
     showNotification("Зображення добавлено!");
 });
+

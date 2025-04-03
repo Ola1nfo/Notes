@@ -12,6 +12,10 @@ function displayNotes(filteredNotes) {
             li.innerHTML = `<strong>${note.title}</strong><br>${note.text}`;
             li.classList.add("note-item");
 
+            if (note.color) {
+                li.style.backgroundColor = note.color;
+            }
+
             const deleteButton = document.createElement("button");
             deleteButton.classList.add("delete_btn");
             let deleteIcon = document.createElement("img");
@@ -86,3 +90,4 @@ microphoneIcon.addEventListener("click", function () {
 pictureIcon.addEventListener("click", function () {
     showNotification("Зображення добавлено!");
 });
+
