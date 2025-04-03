@@ -1,0 +1,242 @@
+@import './font.css';
+@import './create_note.css';
+@import './chekout.css';
+
+body{
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.phone {
+    height: 650px;
+    width: 370px;
+    border: 20px solid black;
+    border-radius: 42px;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.phone_screen {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 35px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f0f0f0; 
+}
+
+.data_time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: -25px;
+}
+
+.camera {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera_ob {
+    width: 6px;
+    height: 6px;
+    background-color: #333;
+    border-radius: 50%;
+}
+
+.wifi_battery {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.wifi, .battery {
+    height: 15px;
+    width: auto;
+}
+
+.wifi_battery p {
+    margin: 0;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+}
+.procent{
+    font-size: 12px;
+}
+
+.main_menu{
+    background-color: rgb(198, 239, 248);
+    border-radius: 40px;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    font-family: note_header;
+    margin-top: -35px;
+    height: 35px;
+}
+
+.menu_icon{
+    height: 20px;
+    padding-right: 20px;
+}
+
+.main_menu p{
+    font-size: 16px;
+}
+.phone_down{
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(198, 239, 248);
+    height: 50px;
+}
+.menu_plus{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    padding: 5px;
+}
+.menu_plus img{
+    height: 20px;
+    padding: 10px;
+}
+.add {
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: -30px;
+    left: 85%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+#notesList {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Дві колонки рівної ширини */
+    gap: 10px; /* Відстань між елементами */
+    padding: 0;
+    margin: 10px 0;
+    grid-auto-flow: dense; /* Дозволяє заповнювати порожні місця */
+}
+
+#notesList li {
+    border: 1px solid #c5c5c5;
+    border-radius: 10px;
+    padding: 10px;
+    list-style: none;
+    overflow: hidden;
+    max-height: 150px;
+}
+
+/* Додаємо можливість для різної висоти елементів */
+#notesList li:nth-child(odd) {
+    grid-row: span 2; /* Довший елемент */
+}
+
+#notesList li:nth-child(even) {
+    grid-row: span 1; /* Коротший елемент */
+}
+
+#searchInput{
+    border: none;
+    background-color: rgb(198, 239, 248);
+    outline: none;
+}
+.note-item{
+    position: relative;
+}
+.delete_btn{
+    border: none;
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+.imgDelete{
+    height: 15px;
+}
+#notification {
+    position: absolute;
+    bottom: 500px;
+    left: 185px;
+    width: 332px;
+    transform: translateX(-50%);
+    background-color: #4c8cafdc;
+    color: rgb(0, 0, 0);
+    padding: 50px 20px;
+    font-size: 27px;
+    text-align: center;
+    border-radius: 5px;
+    display: none;
+}
+
+
+
+
+footer{
+    background-color: rgb(198, 239, 248);
+    height: 30px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #fff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.square, .circle, .triangle {
+    width: 14px;
+    height: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.square {
+    background-color: #c5c5c5;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    background-color: #c5c5c5;
+    border-radius: 50%;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 15px solid #c5c5c5;
+}
+
+

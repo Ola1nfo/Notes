@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook</title>
+    <link rel="stylesheet" href="../style/create_note.css">
+</head>
+<body>
+    <div class="phone">
+        <div class="phone_screen">
+            <header class="data_time">
+                <p>19:30</p>
+                <div class="camera">
+                    <div class="camera_ob"></div>
+                </div>
+                <div class="wifi_battery">
+                    <img class="wifi" src="../img/wifi.png" alt="">
+                    <img class="battery" src="../img/battery-status.png" alt="">
+                    <p>82 <span class="procent">%</span></p>
+                </div>
+            </header>
+            <div class="arrow_back">
+                <a href="../index.html"><img src="../img/arrow.png" alt=""></a>
+            </div>
+
+            <main class="main_add_note">
+                <textarea id="noteTitle" class="title" type="text" placeholder="Назва"></textarea>
+                <textarea id="noteText" class="text_title" type="text" placeholder="Нотатка"></textarea>
+            </main>
+            <div class="choose_down">
+                <div class="add_palette">
+                    <img src="../img/add-button.png" alt="" id="addButton">
+                    <div class="menu_plus_small" id="menu" style="display: none;">
+                        <img id="brushIcon" src="../img/artist-brush.png" alt="">
+                        <img id="microphoneIcon" src="../img/microphone.png" alt="">
+                        <img id="pictureIcon" src="../img/picture.png" alt="">
+                        <div id="notification"></div>
+                    </div>
+                    <img src="../img/paint-palette.png" alt="">
+                </div>
+                <p>Відредаговано: <span id="last-edited"></span></p>
+                <img src="../img/vertical-dots.png" alt="">
+            </div>
+            <footer>
+                <div class="square"></div>
+                <div class="circle"></div>
+                <div class="triangle"></div>
+            </footer>
+        </div>
+    </div>
+
+    <ul id="notesList"></ul>    
+    <script src="../js/create_note.js"></script>
+</body>
+</html>
