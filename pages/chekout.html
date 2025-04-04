@@ -26,13 +26,11 @@
 
             <main class="main_add_note">
                 <textarea id="noteTitle" class="title" type="text" placeholder="Назва"></textarea>
-                <label>
-                    <input id="noteCheckbox" class="text_title" type="checkbox"></input>
-                </label>
-                <input type="text" id="textTitle">
-                <div class="plusCheck">
-                    <img src="../img/plus.png" alt="">
-                    <p>Пункт списку</p>
+                <div class="checkboxes-container">
+                    <label><input type="checkbox" class="noteCheckbox"> Назва 1</label><br>
+                    <label><input type="checkbox" class="noteCheckbox"> Назва 2</label><br>
+                    <label><input type="checkbox" class="noteCheckbox"> Назва 3</label><br>
+                    <!-- Можна додати більше чекбоксів, якщо потрібно -->
                 </div>
             </main>
             <div class="choose_down">
@@ -44,9 +42,16 @@
                         <img id="pictureIcon" src="../img/picture.png" alt="">
                         <div id="notification"></div>
                     </div>
-                    <img src="../img/paint-palette.png" alt="">
+                    <img src="../img/paint-palette.png" alt="" id="colorPickerButton">
+                    <div class="color-options" id="colorOptions" style="display: none;">
+                        <div class="color-option" data-color="none" style="background-color: transparent; border: 1px solid #ccc;"></div>
+                        <div class="color-option" data-color="#ffcccc" style="background-color: #ffcccc;"></div>
+                        <div class="color-option" data-color="#ccffcc" style="background-color: #ccffcc;"></div>
+                        <div class="color-option" data-color="#ccccff" style="background-color: #ccccff;"></div>
+                        <div class="color-option" data-color="#ffffcc" style="background-color: #ffffcc;"></div>
+                    </div>
                 </div>
-                <p>Відредаговано: </p>
+                <p class="editText">Відредаговано: <span id="last-edited"></span></p>
                 <img src="../img/vertical-dots.png" alt="">
             </div>
             <footer>
