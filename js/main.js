@@ -17,14 +17,18 @@ function displayNotes(filteredNotes) {
             }
 
             const deleteButton = document.createElement("button");
-            deleteButton.classList.add("delete_btn");
-            let deleteIcon = document.createElement("img");
-            deleteIcon.src = "img/recycle-bin.png";
+            const deleteIcon = document.createElement("img");  // Створюємо іконку видалення
+            deleteIcon.src = "img/recycle-bin.png"; // Ваше джерело для іконки
             deleteIcon.alt = "Delete";
             deleteIcon.classList.add("imgDelete");
             deleteButton.appendChild(deleteIcon);
-            li.appendChild(deleteButton);
+            deleteButton.classList.add("delete_btn");
 
+            if (note.color) {
+                deleteButton.style.backgroundColor = note.color; // Змінюємо фон кнопки
+            }
+
+            li.appendChild(deleteButton);
             notesList.appendChild(li);
 
             // Видалення нотатки

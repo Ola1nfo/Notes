@@ -107,28 +107,32 @@ document.getElementById('colorPickerButton').addEventListener('click', function 
 document.querySelectorAll('.color-option').forEach(option => {
     option.addEventListener('click', function () {
         const selectedColor = this.getAttribute('data-color');
-        localStorage.setItem('noteColor', selectedColor)
-        const noteBlock = document.querySelector('.phone_screen');
-        noteBlock.style.backgroundColor = selectedColor;
-        const noteBlockTitle = document.querySelector('#noteTitle');
-        noteBlockTitle.style.backgroundColor = selectedColor;
-        const noteBlockItem = document.querySelector('#noteText');
-        noteBlockItem.style.backgroundColor = selectedColor;
+        
+        if (selectedColor === 'none') {
+            // Якщо вибрано "без кольору", встановлюємо стандартний колір
+            setNoteColor('#f0f0f0');
+        } else {
+            // Якщо вибрано інший колір, застосовуємо його тільки до поточної нотатки
+            setNoteColor(selectedColor);
+        }
     });
 });
 
-// Встановлення кольору при завантаженні сторінки
+// Функція для зміни кольору тільки для поточної нотатки
+function setNoteColor(color) {
+    const noteBlock = document.querySelector('.phone_screen');
+    noteBlock.style.backgroundColor = color;
+
+    const noteBlockTitle = document.querySelector('#noteTitle');
+    noteBlockTitle.style.backgroundColor = color;
+
+    const noteBlockItem = document.querySelector('#noteText');
+    noteBlockItem.style.backgroundColor = color;
+}
+
+// Встановлення стандартного кольору при завантаженні сторінки для нової нотатки
 window.addEventListener('load', function () {
-    const savedColor = localStorage.getItem('noteColor');
-    if (savedColor) {
-        // Якщо є збережений колір, застосуємо його
-        const noteBlock = document.querySelector('.phone_screen');
-        noteBlock.style.backgroundColor = savedColor;
-
-        const noteBlockTitle = document.querySelector('#noteTitle');
-        noteBlockTitle.style.backgroundColor = savedColor;
-
-        const noteBlockItem = document.querySelector('#noteText');
-        noteBlockItem.style.backgroundColor = savedColor;
-    }
+    // Стандартний колір для нових нотаток
+    const defaultColor = '#f0f0f0';
+    setNoteColor(defaultColor);
 });
