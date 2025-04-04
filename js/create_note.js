@@ -97,3 +97,38 @@ pictureIcon.addEventListener("click", function () {
     showNotification("Зображення добавлено!");
 });
 
+// Показ або приховування палітри кольорів
+document.getElementById('colorPickerButton').addEventListener('click', function () {
+    const colorOptions = document.getElementById('colorOptions');
+    colorOptions.style.display = colorOptions.style.display === 'none' ? 'flex' : 'none';
+});
+
+// Зміна background-color: #f0f0f0; на вибраний
+document.querySelectorAll('.color-option').forEach(option => {
+    option.addEventListener('click', function () {
+        const selectedColor = this.getAttribute('data-color');
+        localStorage.setItem('noteColor', selectedColor)
+        const noteBlock = document.querySelector('.phone_screen');
+        noteBlock.style.backgroundColor = selectedColor;
+        const noteBlockTitle = document.querySelector('#noteTitle');
+        noteBlockTitle.style.backgroundColor = selectedColor;
+        const noteBlockItem = document.querySelector('#noteText');
+        noteBlockItem.style.backgroundColor = selectedColor;
+    });
+});
+
+// Встановлення кольору при завантаженні сторінки
+window.addEventListener('load', function () {
+    const savedColor = localStorage.getItem('noteColor');
+    if (savedColor) {
+        // Якщо є збережений колір, застосуємо його
+        const noteBlock = document.querySelector('.phone_screen');
+        noteBlock.style.backgroundColor = savedColor;
+
+        const noteBlockTitle = document.querySelector('#noteTitle');
+        noteBlockTitle.style.backgroundColor = savedColor;
+
+        const noteBlockItem = document.querySelector('#noteText');
+        noteBlockItem.style.backgroundColor = savedColor;
+    }
+});
