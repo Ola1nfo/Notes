@@ -17,29 +17,27 @@ function displayNotes(filteredNotes) {
             }
 
             const deleteButton = document.createElement("button");
-            const deleteIcon = document.createElement("img");  // Створюємо іконку видалення
-            deleteIcon.src = "img/recycle-bin.png"; // Ваше джерело для іконки
+            const deleteIcon = document.createElement("img");
+            deleteIcon.src = "img/recycle-bin.png"; 
             deleteIcon.alt = "Delete";
             deleteIcon.classList.add("imgDelete");
             deleteButton.appendChild(deleteIcon);
             deleteButton.classList.add("delete_btn");
 
             if (note.color) {
-                deleteButton.style.backgroundColor = note.color; // Змінюємо фон кнопки
+                deleteButton.style.backgroundColor = note.color; 
             }
 
             li.appendChild(deleteButton);
             notesList.appendChild(li);
 
-            // Видалення нотатки
             deleteButton.addEventListener("click", (event) => {
-                event.stopPropagation(); // Щоб не активувалось редагування при натисканні на кнопку
+                event.stopPropagation();
                 notes.splice(index, 1);
                 localStorage.setItem("notes", JSON.stringify(notes));
                 displayNotes(notes);
             });
 
-            // Натискання на всю нотатку для редагування
             li.addEventListener("click", () => {
                 localStorage.setItem("currentIndex", index);
                 localStorage.setItem("tempTitle", note.title);
@@ -50,10 +48,8 @@ function displayNotes(filteredNotes) {
     }
 }
 
-// Відображаємо всі нотатки при завантаженні сторінки
 displayNotes(notes);
 
-// Пошук
 if (searchInput) {
     searchInput.addEventListener("input", (e) => {
         const query = e.target.value.toLowerCase();
@@ -74,23 +70,22 @@ function showNotification(message) {
     notification.textContent = message;
     notification.style.display = "block";
 
-    // Сховати повідомлення через 3 секунди
     setTimeout(() => {
         notification.style.display = "none";
     }, 2000);
 }
 
-// Функція для малювання
+checkbox.addEventListener("click", function () {
+    showNotification("На стадії розробки");
+});
 brushIcon.addEventListener("click", function () {
     showNotification("Відкрито режим малювання!");
 });
 
-// Функція для мікрофона (запис голосу)
 microphoneIcon.addEventListener("click", function () {
     showNotification("Розпочато запис голосу!");
 });
 
-// Функція для картинки (завантаження зображення)
 pictureIcon.addEventListener("click", function () {
     showNotification("Зображення добавлено!");
 });

@@ -104,25 +104,22 @@ body{
     top: 150px;
     left: 30px;
 }
-/* Зміна стилів смуги прокрутки для textarea */
+
 .main_add_note textarea::-webkit-scrollbar {
-    width: 12px; /* Ширина смуги прокрутки */
+    width: 8px; 
 }
 
-/* Колір фону для треку смуги прокрутки */
 .main_add_note textarea::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* Світло-сірий фон для треку */
+    background-color: #f1f1f1;
 }
 
-/* Колір і стиль повзунка смуги прокрутки */
 .main_add_note textarea::-webkit-scrollbar-thumb {
-    background-color: #c5c5c5; /* Колір "повзунка" */
-    border-radius: 10px; /* Округлення кутів "повзунка" */
+    background-color: #c5c5c5; 
+    border-radius: 10px; 
 }
 
-/* Стиль для "повзунка" при наведенні */
 .main_add_note textarea::-webkit-scrollbar-thumb:hover {
-    background-color: #888787; /* Темніший колір при наведенні */
+    background-color: #888787;
 }
 
 .title{
@@ -148,7 +145,7 @@ body{
     margin-right: 30px;
     margin-left: 5px;
 }
-/* Стили для меню */
+
 .menu_plus_small {
     position: absolute;
     top: -115px;
@@ -205,10 +202,6 @@ body{
 .editText{
     margin-left: -50px;
 }
-
-
-
-
 
 footer{
     height: 30px;

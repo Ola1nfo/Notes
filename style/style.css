@@ -103,6 +103,29 @@ body{
 .main_menu p{
     font-size: 16px;
 }
+.main_index{
+    flex: 1;
+    overflow-y: auto;
+    max-height: 505px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.main_index::-webkit-scrollbar {
+    width: 8px;
+}
+
+.main_index::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.main_index::-webkit-scrollbar-thumb {
+    background-color: #c5c5c5;
+    border-radius: 10px; 
+}
+
+.main_index::-webkit-scrollbar-thumb:hover {
+    background-color: #888787;
+}
 .phone_down{
     position: absolute;
     bottom: 30px;
@@ -141,11 +164,11 @@ body{
 }
 #notesList {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Дві колонки рівної ширини */
-    gap: 10px; /* Відстань між елементами */
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
     padding: 0;
     margin: 10px 0;
-    grid-auto-flow: dense; /* Дозволяє заповнювати порожні місця */
+    grid-auto-flow: dense;
 }
 
 #notesList li {
@@ -157,13 +180,12 @@ body{
     max-height: 150px;
 }
 
-/* Додаємо можливість для різної висоти елементів */
 #notesList li:nth-child(odd) {
-    grid-row: span 2; /* Довший елемент */
+    grid-row: span 2;
 }
 
 #notesList li:nth-child(even) {
-    grid-row: span 1; /* Коротший елемент */
+    grid-row: span 1;
 }
 
 #searchInput{
@@ -197,9 +219,6 @@ body{
     border-radius: 5px;
     display: none;
 }
-
-
-
 
 footer{
     background-color: rgb(198, 239, 248);
